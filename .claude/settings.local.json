@@ -17,7 +17,9 @@
       "Bash(curl -s -o /tmp/dash.png \"https://www.figma.com/api/mcp/asset/83ba9299-7399-4bd5-a8c4-c063807ebcb7\")",
       "Bash(jq -r .[].text /Users/apple/.claude/projects/-Users-apple-Documents-Omni-design-skill/b19bf8f5-dd49-4c22-ba26-8d49b2253a78/tool-results/mcp-claude_ai_Figma-get_metadata-1780740256348.txt)",
       "mcp__claude_ai_Figma__whoami",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(npx --yes skills@latest --help)",
+      "Bash(git config *)"
     ]
   }
 }
