@@ -5,7 +5,7 @@ description: OmniONE — DOS (Distributor Operating System) design skill. Mobile
 
 # OmniONE — DOS
 
-Mobile app (375px, native iOS frames) for distributors/store operators. Extends [omni-design-system](../SKILL.md). Gordita throughout (native status-bar numerals use Inter — system only).
+Mobile app (375px, native iOS frames) for distributors/store operators. Extends [omni-design-system](../base/SKILL.md). Gordita throughout (native status-bar numerals use Inter — system only).
 
 ## Voice / personality
 Operational, warehouse-floor utility tool — task-first, not a marketing surface. Calm and **neutral/grey-forward** (Steel Gray dominant, blue reserved). Friendly but terse: short headers, emoji greeting ("Hi John 👋🏼"), guided multi-step onboarding. Empty states push the next action.

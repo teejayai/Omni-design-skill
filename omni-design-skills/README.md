@@ -5,8 +5,8 @@ Reusable design skills for the **OmniONE Retail** design system, distributed via
 ## Structure
 ```
 omni-design-skills/
-├── SKILL.md            # shared base: tokens + global rules
-├── tokens.json         # machine-readable design tokens
+├── base/SKILL.md       # shared base: tokens + global rules
+├── base/tokens.json    # machine-readable design tokens
 ├── dos/SKILL.md
 ├── mos/SKILL.md
 ├── agent/SKILL.md
@@ -14,6 +14,12 @@ omni-design-skills/
 ├── omnipay/SKILL.md
 └── README.md
 ```
+
+## Install
+```
+skills add teejayai/Omni-design-skill
+```
+Installs all 6 skills (base + 5 products). Read `base/SKILL.md` first, then a product skill.
 
 ## Model
 ONE shared design system (`SKILL.md` + `tokens.json`). Each product extends it with its own voice, component preferences, and **documented deviations** — but never redefines base tokens. Read the base first, then the product skill.

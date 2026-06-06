@@ -5,7 +5,7 @@ description: OmniONE — MOS (Manufacturer OS) design skill. Desktop B2B web app
 
 # OmniONE — MOS
 
-Desktop B2B web app (1440px) for manufacturers — Targets, Roles, Sales Process, Order Creation, Product upload, Customer Mgt. Extends [omni-design-system](../SKILL.md). Gordita throughout. Currency ₦. "Powered by OmniONE" footer on every screen.
+Desktop B2B web app (1440px) for manufacturers — Targets, Roles, Sales Process, Order Creation, Product upload, Customer Mgt. Extends [omni-design-system](../base/SKILL.md). Gordita throughout. Currency ₦. "Powered by OmniONE" footer on every screen.
 
 ## Voice / personality
 Operational and businesslike. Plain, task-led labels ("Add New Target", "Pending Validation"). Guided, multi-step (stepper flows + form-with-live-Preview). Trust/clarity over flair — status via soft-tinted badges, not loud color.

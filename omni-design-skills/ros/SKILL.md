@@ -5,7 +5,7 @@ description: OmniONE — ROS (Retail Operating System) design skill. Mobile-firs
 
 # OmniONE — ROS
 
-Mobile-first (375px, PWA + native) retail operating system. Extends [omni-design-system](../SKILL.md). Gordita throughout. **Biggest deviation: ROS uses near-black steel-gray as its action color, not brand blue.**
+Mobile-first (375px, PWA + native) retail operating system. Extends [omni-design-system](../base/SKILL.md). Gordita throughout. **Biggest deviation: ROS uses near-black steel-gray as its action color, not brand blue.**
 
 ## Voice / personality
 Warm, personable, low-friction. Headers address the user by name ("Hi Cece!") with reassuring sub-lines ("We need a bit more information. Please enter your business details"). Progress always shown ("1 / 3" + bar, or step dots) — onboarding framed as short and guided. Calm neutral chrome: black/white/grey + a single teal accent, no decorative color.

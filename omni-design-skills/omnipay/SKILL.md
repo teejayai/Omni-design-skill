@@ -5,7 +5,7 @@ description: OmniONE — OMNIPAY design skill. Payments/wallet/card product (web
 
 # OmniONE — OMNIPAY
 
-Payments / wallet / card product, web (1440px) + mobile (375px). Extends [omni-design-system](../SKILL.md). Gordita is the system font. OmniPay overlays a distinct **purple** accent and (legacy) mixes in third-party kits — treat those as debt, not patterns.
+Payments / wallet / card product, web (1440px) + mobile (375px). Extends [omni-design-system](../base/SKILL.md). Gordita is the system font. OmniPay overlays a distinct **purple** accent and (legacy) mixes in third-party kits — treat those as debt, not patterns.
 
 ## Voice / personality
 Functional, transactional, finance-grade. Plain labels ("Wallet Balance", "Add Money", "Withdraw"). Explicit trust/compliance cues on money flows ("Powered by Victory MFB — Trusted, Secured, and CBN Licensed", "Terms and Conditions of OmniPay cards"). Warm onboarding microcopy on auth. Clear + reassuring, not playful.

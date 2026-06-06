@@ -5,7 +5,7 @@ description: OmniONE — AGENT product design skill. Mobile field-sales-agent ap
 
 # OmniONE — AGENT
 
-Mobile-first (375px) app for field sales agents. Extends [omni-design-system](../SKILL.md) — use base Gordita type scale + token names; the overrides below are AGENT-specific.
+Mobile-first (375px) app for field sales agents. Extends [omni-design-system](../base/SKILL.md) — use base Gordita type scale + token names; the overrides below are AGENT-specific.
 
 ## Voice / personality
 Supportive coach, not a dashboard. Gamified and encouraging: greetings by name ("Hi Anike"), streak/booster framing ("178th", "Today's Booster Suggestion"), motivational copy, emoji mascots, friendly illustrated empty states. Spacious, card-driven, generous vertical rhythm — **never data-dense**.
