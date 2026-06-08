@@ -11,8 +11,19 @@ Source: Figma `OmniONE Design system` (`RNBrFtlAUysqguEEm4AzyY`).
 
 ## Typography
 
-- **Font: `Gordita`** everywhere. Weights: Regular 400 · Medium 500 · Bold 700 · Black 900 (every style has all four).
+- **Font: `Gordita`** everywhere. Weights: Regular 400 · Medium 500 · Bold 700 · Black 900 (every style has all four). Light 300 + italics also ship.
 - Designed to a **4px grid**. Letter-spacing values are percentages (px = size × pct).
+
+### Font files (self-hosted)
+Brand `.otf` files live in [`fonts/`](./fonts/); `@font-face` declarations in [`fonts/gordita.css`](./fonts/gordita.css). Import once at the app root: `@import "./fonts/gordita.css";` (or `<link>`), then use `font-family: "Gordita"`.
+
+| File | weight | style |
+|---|---|---|
+| Gordita-Light.otf / -LightItalic.otf | 300 | normal / italic |
+| Gordita-Regular.otf / -RegularItalic.otf | 400 | normal / italic |
+| Gordita-Medium.otf / -MediumItalic.otf | 500 | normal / italic |
+| Gordita-Bold.otf / -BoldItalic.otf | 700 | normal / italic |
+| Gordita-Black.otf / -BlackItalic.otf | 900 | normal / italic |
 
 ### Web type scale (exact)
 | Style | Size | Line height | Tracking |
@@ -31,6 +42,24 @@ Source: Figma `OmniONE Design system` (`RNBrFtlAUysqguEEm4AzyY`).
 | Label - 10 | 10 | 18 | 0% |
 
 Mobile scale (`Body Medium-14`, `Body Small-12`, + heading mirror) — names known, exact values pending.
+
+## Icons
+
+- **1,176 SVG icons** in [`icons/`](./icons/), grouped into 19 category folders. Index + full name list: [`icons/icons.json`](./icons/icons.json).
+- Each icon is **24×24, `viewBox="0 0 24 24"`**, line/path-based. Recolor with `fill`/`stroke` — set `currentColor` so icons inherit text color. Size via `width`/`height` (use the 4px grid: 16/20/24).
+- File path: `icons/<category>/<icon-name>.svg` (kebab-case). e.g. `icons/general/home-01.svg`, `icons/arrows/arrow-right.svg`.
+
+| Category | # | Category | # | Category | # |
+|---|--|---|--|---|--|
+| general | 197 | media-and-devices | 108 | editor | 104 |
+| arrows | 92 | finance-and-ecommerce | 78 | layout | 63 |
+| communication | 58 | files | 58 | development | 57 |
+| weather | 52 | charts | 49 | maps-and-travels | 43 |
+| users | 42 | security | 36 | education | 31 |
+| images | 29 | time | 28 | alerts-and-feedback | 26 |
+| shapes | 25 | | | | |
+
+Use only these icons — don't invent or pull from other sets. Country flags + file-type chips were excluded.
 
 ## Color
 
@@ -66,7 +95,22 @@ Mobile scale (`Body Medium-14`, `Body Small-12`, + heading mirror) — names kno
 - **Radius**: control 4px · card/modal 8px · pill 30px
 - **Spacing**: 4px grid — 4 · 8 · 12 · 16 · 20 · 24 · 32 …
 - **Button heights**: sm 32 · md 36 · lg 44 · xl/2xl 48 · **Icon** 24×24
-- **Effects**: no shadow styles confirmed; prefer borders + radius for separation. (Pending correct effects-page link.)
+- **Effects**: see Shadows below.
+
+### Shadows (exact — same scale web + mobile)
+Untitled-UI elevation scale, base color `#101828`. Use for overlays/raised surfaces; default to borders for flat separation.
+
+| Token | box-shadow |
+|---|---|
+| `xs` | `0px 1px 2px 0px rgba(16,24,40,0.05)` |
+| `sm` | `0px 1px 2px 0px rgba(16,24,40,0.06), 0px 1px 3px 0px rgba(16,24,40,0.10)` |
+| `md` | `0px 2px 4px -2px rgba(16,24,40,0.06), 0px 4px 8px -2px rgba(16,24,40,0.10)` |
+| `lg` | `0px 4px 6px -2px rgba(16,24,40,0.03), 0px 12px 16px -4px rgba(16,24,40,0.08)` |
+| `xl` | `0px 8px 8px -4px rgba(16,24,40,0.03), 0px 20px 24px -4px rgba(16,24,40,0.08)` |
+| `2xl` | `0px 24px 48px -12px rgba(16,24,40,0.18)` |
+| `3xl` | `0px 32px 64px -12px rgba(16,24,40,0.14)` |
+
+Guidance: `xs/sm` inputs & cards · `md/lg` dropdowns & popovers · `xl/2xl` modals & toasts · `3xl` full-screen overlays.
 
 ## Components
 
@@ -78,14 +122,44 @@ Mobile scale (`Body Medium-14`, `Body Small-12`, + heading mirror) — names kno
 
 **Divider** — 1px, Grey/100 #F0F2F5.
 
+**Tag** — radius **4**, padding 10×(5–6), gap 4, **Gordita Medium**. Sizes S 12/18 · M 14/20 · L 16/24. Optional 12px leading/trailing icon (recolor to text). Types:
+| Type | bg | text |
+|---|---|---|
+| Default | transparent, border #E4E5E8 | #4B5563 |
+| Error | #FAE1E3 | #8F222D |
+| Warning | #FFF6DA | #624A02 |
+| Success | #DEF7EF | #0E5B43 |
+
+**Badge / Status** — pill (radius **24**), padding 20×(5–6), **Gordita Regular**. Sizes S 12/18 · M 14/20 · L 16/24.
+| Type | bg | text |
+|---|---|---|
+| Blue | #E8F1FA | #2C517D |
+| Red | #FFF0F1 | #8F222D |
+| Yellow | #FFF8E3 | #624A02 |
+| Green | #DEF7EF | #0E5B43 |
+| Purple | #EDE6FF | #534180 |
+| Orange | #FFF2EE | #962F10 |
+| Grey | #F0F0F1 | #999999 |
+
+**Badge / Dot, Count & notification** — *Dot* 6px in 10 colors (orange/teal/blue/yellow/red/dark-grey/light-blue/green/purple/gray). *Dot-on-icon* S 18 · M 20 · L 24. *Dot-on-text* leading dot before a label. *Count* sizes S 30 · M 32 · L 36, colors red/gray, digit Single/Double (+plus); hidden at 0, caps at 9+/99+. Mobile + Desktop variants.
+
+## Logos
+
+In [`logos/`](./logos/): a master sheet (`omni-logos-sheet.svg` / `.png`, 4000px) **plus 18 per-logo SVGs** — 6 brands × 3 forms.
+
+- **Forms**: `wordmark` (horizontal lockup) · `app-icon` (white mark on #173E87 rounded square) · `mark` (standalone swirl).
+- **Files**: `<brand>-<form>.svg`, e.g. `omnione-wordmark.svg`, `omnipay-app-icon.svg`, `omni-mark.svg`.
+- **Brands & accent**: **Omni** (brand blue) · **OmniBiz** (orange) · **OmniPay** (purple) · **OmniHub** (green) · **OmniOne** (cyan/light-blue) · **OmniRetail** (bright green). The swirl mark is shared; only the accent stroke changes per brand.
+- Each product skill uses its own brand lockup. SVGs are vector windows onto the master sheet (scale freely).
+
 ## Global rules
 1. Type in **Gordita** only; pick from the scale above.
 2. Use semantic tokens (Brand/Button/Surface/Border/Text/Icon) for UI; reach for raw ramps only when no semantic token fits.
 3. Exact hex/names only — never approximate or introduce new colors.
 4. Radius by role: controls 4px, surfaces 8px, pills 30px. Spacing on the 4px grid.
-5. Separate with borders + radius, not drop shadows.
+5. Separate flat content with borders + radius; use the **Shadows** scale only for raised/overlay surfaces (dropdowns, modals, toasts).
 6. Product skills *select among* these tokens and set component preferences — they may not redefine tokens.
 
 ## Gaps
 - Mobile type-scale exact values (names captured).
-- Effect/shadow styles — the provided effects link (`4901:7222`) is an empty "Gift" page; share the correct node to finalize.
+- Per-brand vector (SVG) logo files — sheet captured as PNG; vector export pending a re-issued Figma token.
