@@ -110,7 +110,9 @@ Untitled-UI elevation scale, base color `#101828`. Use for overlays/raised surfa
 | `2xl` | `0px 24px 48px -12px rgba(16,24,40,0.18)` |
 | `3xl` | `0px 32px 64px -12px rgba(16,24,40,0.14)` |
 
-Guidance: `xs/sm` inputs & cards · `md/lg` dropdowns & popovers · `xl/2xl` modals & toasts · `3xl` full-screen overlays.
+Plus a **menu** shadow for row/action popovers: `0px 15px 35px -5px rgba(17,24,38,0.15), 0px 5px 15px 0px rgba(0,0,0,0.08)`.
+
+Guidance: `xs/sm` inputs & cards · `md/lg` dropdowns & **toasts** (toast = `lg`) · `xl` **modals, Select & rich pickers** · menu shadow for action/kebab menus · `2xl/3xl` full-screen overlays.
 
 ## Components
 
@@ -118,7 +120,9 @@ Guidance: `xs/sm` inputs & cards · `md/lg` dropdowns & popovers · `xl/2xl` mod
 
 **Input row / addons** — bg #F6F6F6, padding 12, gap 8, Gordita Regular 16/24 #747474. Addons: Trailing Icon, Leading/Trailing dropdown, Flag + number, Bank Icon, Tags.
 
-**Modal** — radius 8, bg #FFFFFF, footer top-border #ECECEC + padding 24 + gap 11 + two equal pill buttons.
+**Modal** — two shells:
+- **Web dialog** — bg #FFFFFF, **radius 12**, shadow `xl`. Header `pt-24 px-24/32`, title Gordita **Bold 18–20** (#333 / #101828), optional close `x-close` (24px Icon, top-right). Body Gordita **Regular 16/24** #667085. Actions footer `pt-24 pb-24 px-24/32`, buttons **right-aligned**, gap 16. Buttons: h44, **radius 4**, padding 10×20, Gordita **Bold 16**. Primary = #173E87 text #FEFEFE · Secondary = #FFFFFF + 1px border #173E87, text #12326C · Destructive = #DC3545 text #FEFEFE. (Confirm/dialog modals stack title→body→actions; **Select** modal adds a search + list, full-width primary "Proceed".)
+- **Mobile bottom sheet** — bg #FFFFFF, **rounded-top 30px**, `pt-10 px-24`, top **grabber** handle (64px line, Primary2/75 #DBDDE0), bottom home-indicator. Content centred, gap 30–41. Title Gordita **Medium 16** #333; subtext Gordita **Regular 14/20** #808080 centred. CTAs = two **equal** buttons, gap 20, **radius 5**, padding 10×16, Gordita **Medium 14**. Primary = Steel-Gray/900 **#161A1E** text #FEFEFE · Secondary = #FFFFFF + 1px border #333 text #333. Variants: Default · Warning · Error · Success (top featured icon in type color) · OTP · Check-box list · List · Language modal.
 
 **Divider** — 1px, Grey/100 #F0F2F5.
 
@@ -142,6 +146,37 @@ Guidance: `xs/sm` inputs & cards · `md/lg` dropdowns & popovers · `xl/2xl` mod
 | Grey | #F0F0F1 | #999999 |
 
 **Badge / Dot, Count & notification** — *Dot* 6px in 10 colors (orange/teal/blue/yellow/red/dark-grey/light-blue/green/purple/gray). *Dot-on-icon* S 18 · M 20 · L 24. *Dot-on-text* leading dot before a label. *Count* sizes S 30 · M 32 · L 36, colors red/gray, digit Single/Double (+plus); hidden at 0, caps at 9+/99+. Mobile + Desktop variants.
+
+**Banner** — inline messaging block. radius **8**, padding 16, gap 12. Leading 20px status icon · title Gordita **Bold 14/20** #0F0F0F · supporting Gordita **Regular 14** #525252 · optional text-button actions (`Learn more` Regular #7A7A7A, `View changes` Medium #525252 + arrow) · trailing close `x-close` 20px. Type = color: **info** bg `rgba(23,62,135,0.05)` border #173E87 · **success** green · **warning** amber · **error** red · **question**. (bg = 5% tint of type color, border 1px type color.) Mobile = same, ~328px wide. *Inline info-card* variant = compact 1-line bar, Alert=Primary/Warning/Error.
+
+**Toast** — transient overlay. bg #FFFFFF, radius **8**, **left border 4px** in type color, shadow `lg`, padding 20×16. Two layouts:
+- **Stacked** (w 420 / mobile 375) — featured icon = 36px tinted circle (e.g. success bg #E8FCE9) + 18px type-color icon; title Gordita **Bold 14/20** #333; supporting Gordita **Regular 14** #525252; actions (Dismiss / View changes, Medium 14 #525252); close `x-close` 20px.
+- **Inline** (w 549 / 375) — single row, icon + text + close.
+Types: info · success · warning · error.
+
+## Navigation
+
+**Breadcrumb** — Gordita **Regular 14/20**. Inactive crumbs #CCCCCC, **active (last)** #333. Separator `/` (px-8, color `rgba(0,0,0,0.45)`). Counts 2/3/4/**4+** (4+ collapses middle to `…`).
+
+**Steps (stepper)** — Untitled-UI step item. Props: **Direction** horizontal\|vertical · **Size** small\|medium · **Status** finished\|current\|in&nbsp;progress\|waiting\|error · **Icon** on/off · **Description** on/off · **Tail** (connector line) on/off. Status → color: finished/current/in-progress = teal (Secondary 1), waiting = grey, error = red.
+
+**Bottom nav bar** (mobile) — bg #F8F9FA, px-8, **3/4/5 segments**, config **Icon** or **Icon & label**. Item: 24px icon inside a pill state-layer (h32 w64, px20 py4, radius 16), label Gordita **12/20**. **Active** = label Medium #333 + 8.6px dot below; **inactive** = label Regular #B3B3B3. Bottom home-indicator.
+
+**Side nav bar** (desktop) — w 255, bg #FFFFFF, border-right #F0F0F1. Top *personalised widget* (h80, p16): welcome Gordita Regular 14 #333 + role chip (globe 12px + Gordita Medium 12 #252A31, radius 4). Module rows: px16 py14, gap 12, 20px icon + label Gordita **Regular 12/18** #333, optional trailing chevron (expandable group). Footer (border-top): Settings · Logout. *Variant2* drops the role chip + header divider. A **top/horizontal nav bar** variant also ships for web shells.
+
+## Popover / Selector
+
+Overlay surfaces for search, selection, and row actions. Sit on shadow `xl` (rich pickers) or the **menu** shadow `0px 15px 35px -5px rgba(17,24,38,0.15), 0px 5px 15px 0px rgba(0,0,0,0.08)`.
+
+**Pop Over List item** — base row for all selectors. py-8, gap-8, text Gordita **Regular 14/20** #333. State **Selected** = bg Grey/25 #F8F9FA + **Medium** weight + trailing control (24px radio/checkbox, teal check). Optional Text + supporting text.
+
+**Select (search picker)** — bg #FFFFFF, radius **12**, shadow `xl`. Header pt-24 px-24, title Gordita **Bold 20/30** #101828. Search input: bg #FCFCFD, border #EAECF0, radius 8, h44, px-14, 20px `search-lg` + placeholder Gordita Regular 16/24 #667085. List = Pop Over List items. Footer pt-32 pb-24 px-24: **full-width** primary button #173E87, radius 4, h44, Gordita Bold 16 #FEFEFE.
+
+**Item Switch (account switcher)** — bg Gray/50 #F9FAFB, border #E9EAEB, radius **12**, menu shadow (untitled `shadow-lg`, base #0A0D12). White rounded menu wrapper. Section label Gordita **Medium 12/18** #667085. Account card item: px-6, content px8 py6 radius **6** gap 12; **selected** bg Teal/50 #DEF7EF; title Gordita Medium 14/20 #333 + subtitle Gordita Regular 12/18 #667085; trailing 20px radio. Footer item (Logout): 24px icon + Gordita Medium 14 #DC3545.
+
+**Action menu** (row "kebab" menu) — bg #FFFFFF, radius **6**, padding 6×8, menu shadow. Items: px-10 py-8, radius 4, Gordita **Medium 14/20** #333; **destructive** item text #DC3545.
+
+**Filters panel** — modal-style right panel (~w506). Header (title Gordita Bold + icon, divider). Body = stacked Label-atom + select/dropdown input rows. Footer: **Cancel** (secondary) + **Apply Filters** (primary), radius-4 buttons. *Multi-select dropdown input* renders chosen values as `_Badge base` chips (text + 12px x icon) with trailing chevron; empty state = centred "No Search Query".
 
 ## Logos
 

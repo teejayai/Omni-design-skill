@@ -36,7 +36,7 @@ ONE shared design system (`SKILL.md` + `tokens.json`). Each product extends it w
 **Shared everywhere:** Gordita font, the OmniONE type scale, the color ramps & semantic tokens in the base. **Recurring deviations:** most products override brand-blue primary and use softer radii than the base 4px; several use surface `#F8F9FA` and text `#333`.
 
 ## Status
-- ✅ Base: full Gordita type scale, color ramps, semantic tokens, core components.
+- ✅ Base: full Gordita type scale, color ramps, semantic tokens, core components (buttons, inputs, tags, badges, **modals, navigation, banners & toasts, popovers/selectors**).
 - ✅ All 5 product skills (crawled from product Figma files via MCP).
 - ⏳ Pending: mobile type-scale exact values; effect/shadow styles (correct Figma node needed).
 
